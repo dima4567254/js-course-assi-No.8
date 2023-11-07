@@ -1,0 +1,171 @@
+@use "sass:math";
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'mexins';
+@import 'global';
+@import 'libs';
+
+// .header-fixed {
+//     background-color: $silver;
+// }
+
+
+
+.menu {
+    &__btn {
+        display: none;
+    }
+    // font-size: 1.6rem;
+}
+
+.body {
+    background-image: url('../images/images/2.jpg');
+    /* background-image: url('../images/history.jpg'); */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    height: 90vh;
+}
+
+.div {
+
+
+    @media (max-width: 1200px) {
+        height: 90vh;
+    }
+
+    @media (max-width: 992px) {
+        height: 90vh;
+    }
+
+    @media (max-width: 768px) {
+        height: 90vh;
+    }
+
+    @media (max-width: 576px) {
+        height: 90vh;
+    }
+}
+
+.div3 {
+
+
+    @media (max-width: 1200px) {
+        color: rgb(33, 36, 61);
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 29px;
+    }
+
+    @media (max-width: 992px) {
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 20px;
+    }
+
+    @media (max-width: 768px) {
+        color: rgb(33, 36, 61);
+        font-weight: 400;
+        line-height: 29px;
+    }
+
+    @media (max-width: 576px) {
+        color: rgb(33, 36, 61);
+        font-size: 21px;
+        line-height: 29px;
+    }
+}
+
+.div2 {
+
+
+    @media (max-width: 1200px) {
+        line-height: 50px;
+    }
+
+    @media (max-width: 992px) {
+        line-height: 51px;
+    }
+
+    @media (max-width: 768px) {
+        line-height: 52px;
+    }
+
+    @media (max-width: 576px) {
+        line-height: 53px;
+    }
+}
+
+/*медия всегда должны быть в низу */
+
+
+/*
+
+&__link {
+    color: $title;
+    font-family: $;
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 700;
+    outline-color: #000000;
+    outline-offset: 5px;
+    transition: color 0.5s;
+    &:focus {
+        color: $green;
+    }
+
+    &:hover {
+        color: $ac;
+    }
+
+    &--active {
+        color: $ac;
+    }
+}
+
+*/
+
+/*.video {
+    height: 425px;
+    max-width: 1185px;
+    display: flex;
+    justify-content: center;
+    background-position: center;
+    position: relative;
+    opacity: 1;
+    transition: opacity 0.7s,
+        border 0.5s;
+    max-width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+    &:focus {
+        outline: solid $ac;
+    }
+
+    &:hover {
+        opacity: 0.4;
+        border: 2px solid $black;
+    }
+
+    &:active {
+        color: $active;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-image: url('../images/play.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100px;
+        width: 100px;
+    }
+}*/
+
