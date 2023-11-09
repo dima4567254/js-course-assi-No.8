@@ -55,6 +55,7 @@ function disablet() {
     optionalExpensesBtn.style.background = 'silver';
     optionalExpensesBtn.style.cursor = 'inherit';
     optionalExpensesBtn.setAttribute('disabled', '');
+    // disabled всех трех кнопок
 }
 
 // input.addEventListener("input", () => {
@@ -125,25 +126,19 @@ function active() {
     countBtn.style.cursor = 'pointer';
     countBtn.disabled = false;
 }
-
-// function active2() {
-
-//     // expensesBtn.disabled = !optionalExpensesItem.value;
-//     // expensesBtn.disabled = !expensesItem.value;
-//     expensesBtn.style.background = 'revert-layer';
-//     expensesBtn.style.cursor = 'pointer';
-//     expensesBtn.disabled = false;
-
-// }
-
-// function active3() {
-//     optionalExpensesBtn.style.background = 'revert-layer';
-//     optionalExpensesBtn.style.cursor = 'pointer';
-//     optionalExpensesBtn.disabled = false;
-// }
+function active2() {
+    optionalExpensesBtn.style.background = 'revert-layer';
+    optionalExpensesBtn.style.cursor = 'pointer';
+    optionalExpensesBtn.disabled = false;
+}
+function active3() {
+    expensesBtn.style.background = 'revert-layer';
+    expensesBtn.style.cursor = 'pointer';
+    expensesBtn.disabled = false;
+}
 
 startBtn.addEventListener('click', function () {
-    active();
+    // active3();
     time = prompt('Введите дату в формате YYYY-MM-DD', '');
     maney = +prompt('Ваш бюджет на месяц?', '');
     while (isNaN(maney) || maney == "" || maney == null) { //|| или если хоть 1 вариант выполнется то уикл продолжется
@@ -175,11 +170,8 @@ expensesBtn.addEventListener('click', function () {
         };
     }
     expensesValue.textContent = sum; //выводит сумму
-    // var tottal = appData.budget - appData.optionalExpenses;!!!
-
-    // console.log(sum );//обязательные расходы
-    // console.log(appData.optionalExpenses);//бюджет на день
-    // console.log(appData.budget);//доход
+    sumExpenses = sum;
+    return sumExpenses;
     // Реализовать функционал: при расчете дневного бюджета учитывать сумму обязательных трат
     // (т.e.от бюджета на месяц отнимаем общую сумму всех обяз.трат и ее делим на 30 дней)
 });
@@ -212,7 +204,9 @@ countBtn.addEventListener('click', function () {
         // console.log(tottal);
 
         // appData.optionalExpenses - moneyPerDay = sums;
-        appData.moneyPerDay = (appData.budget / 30).toFixed();//расчет на день
+        appData.moneyPerDay = (appData.budget - sumExpenses).toFixed();//расчет на день
+        appData.moneyPerDay = (appData.moneyPerDay / 30).toFixed();
+
         dayBudgetValue.textContent = appData.moneyPerDay;
         // console.log(dayBudgetValue);
         // console.log(moneyPerDay);
